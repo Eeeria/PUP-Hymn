@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Player</title>
+
+  <style>
+  body {  
+      background-color: maroon;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      header {
+        background-color: white;
+        color: black;
+        padding: 5px;
+        text-align: center;
+      }
+      
+      header img {
+        height: 40px;
+        margin-right: 10px;
+        display: center;
+      }
+
+      footer {
+        background-color: white;
+        color: black;
+        padding: 0px;
+        text-align: center;
+      }
+
+    .container 
+    {
+      font-size: 30px;
+			line-height: 1;
+      padding: 0px;
+    }
+
+    .marquee-line
+    {
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    //.controls 
+    {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    button{
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+    <header>
+      <h1> <img src="Song1.png" alt="Logo"> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES</h1>
+    </header>
+  
+    <p> <mark style="background-color: white;"><big> <b> <b>PUP HYMN</b> </b> </big></mark> </p>
+  
+    <div class="container">
+      
+    <audio id="Audio" autoplay>
+      <source src="song1.mp3" type="audio/mpeg">
+    </audio>
+  
+    <div class="controls">
+      <button class="button" onclick="playPause()"><b>Play/Pause</b></button>
+      <button class="button" onclick="fastForwardAudioAndText()"><b>Fast Forward</b></button>
+    </div>
+  
+    <marquee id="Marquee" marquee behavior="scroll" direction="up" scrollamount="1" height="420px"
+        width="100%"  loop="1" scrolldelay="160" >
+        <span class="marquee-line">IMNO NG PUP </span>
+        <span class="marquee-line"><br>Sintang Paaralan<br></span>
+        <span class="marquee-line">Tanglaw ka ng bayan</span>
+        <span class="marquee-line">Pandayan ng isip ng kabataan</span>
+        <span class="marquee-line">Kami ay dumating na salat sa yaman</span>
+        <span class="marquee-line">Hanap na dunong ay iyong alay</span>
+        <span class="marquee-line">Ang layunin mong makatao</span>
+        <span class="marquee-line">Dinarangal ang Pilipino</span>
+        <span class="marquee-line">Ang iyong aral, diwa, adhikang taglay</span>
+        <span class="marquee-line">PUP, aming gabay</span>
+        <span class="marquee-line">Paaralang dakila</span>
+        <span class="marquee-line">PUP, pinagpala</span>
+        <span class="marquee-line"><br>Gagamitin ang karunungan<br></span>
+        <span class="marquee-line">Mula sa iyo, para sa bayan</span>
+        <span class="marquee-line">Ang iyong aral, diwa, adhikang taglay</span>
+        <span class="marquee-line">PUP, aming gabay</span>
+        <span class="marquee-line">Paaralang dakila</span>
+        <span class="marquee-line">PUP, pinagpala</span>
+        </marquee>
+    </div>
+  
+    <script>    
+        var audio = document.getElementById("Audio");
+        var marquee = document.getElementById("Marquee");
+        
+        function playPause() {
+          if (audio.paused) {
+            audio.play();
+            marquee.start();
+          } else {
+            audio.pause();
+            marquee.stop();
+          }
+          }
+        function fastForwardAudioAndText() {
+   
+          audio.currentTime += 5; // Adjust this value to change the amount of time to skip forward
+          marquee.scrollTop += 30; // Adjust this value to change the amount of text to skip forward
+          }
+  </script>
+  
+      <footer>
+          <p>© 1998-2023 POLYTECHNIC UNIVERSITY OF THE PHILIPPINES</p>
+      </footer>
+</body>  
+</html>
